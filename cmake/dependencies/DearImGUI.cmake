@@ -23,5 +23,10 @@ add_library(the_imgui STATIC
     ${dearimgui_SOURCE_DIR}/backends/imgui_impl_sdl2.h
 )
 
-target_include_directories(the_imgui SYSTEM PUBLIC ${dearimgui_SOURCE_DIR} ${dearimgui_SOURCE_DIR}/backends)
+target_include_directories(the_imgui
+    BEFORE
+    PUBLIC
+        ${dearimgui_SOURCE_DIR}
+        ${dearimgui_SOURCE_DIR}/backends
+)
 target_link_libraries(the_imgui PRIVATE the_sdl2)

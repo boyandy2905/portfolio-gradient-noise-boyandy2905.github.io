@@ -18,7 +18,7 @@ namespace graphics::noise
         float interpolant = 0.0f;
     };
 
-    constexpr NoiseCoordinate make_noise_coord(float input) noexcept
+    inline NoiseCoordinate make_noise_coord(float input) noexcept
     {
         const auto base_float = std::floor(input);
         const int  base       = static_cast<int>(base_float);

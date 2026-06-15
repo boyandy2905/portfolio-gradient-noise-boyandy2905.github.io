@@ -14,6 +14,7 @@
 #include <glm/ext/matrix_transform.hpp>  // translate, rotate
 #include <glm/trigonometric.hpp>         // all the GLSL trigonometric functions: radians, cos, asin, etc.
 #include <imgui.h>
+#include <iterator>
 
 namespace
 {
@@ -169,7 +170,7 @@ namespace demos
         const char* const           combo_preview_value = items[current_focus];
         if (ImGui::BeginCombo("Focus", combo_preview_value, 0))
         {
-            for (int n = 0; n < IM_ARRAYSIZE(items); n++)
+            for (int n = 0; n < static_cast<int>(std::size(items)); n++)
             {
                 const bool is_selected = (current_focus == n);
                 if (ImGui::Selectable(items[n], is_selected))

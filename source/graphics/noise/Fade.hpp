@@ -34,15 +34,13 @@ namespace graphics::noise
 
     constexpr float fade(float x, SmoothMethod smoothing) noexcept
     {
-        constexpr float PI = 3.14159265358979323846f;
-
         switch (smoothing)
         {
             case SmoothMethod::Linear:
                 return x;
 
             case SmoothMethod::Cosine:
-                return (1.0f - std::cos(x * PI)) * 0.5f;
+                return (1.0f - std::cos(x * graphics::PI)) * 0.5f;
 
             case SmoothMethod::Smoothstep:
                 return x * x * (3.0f - 2.0f * x);
